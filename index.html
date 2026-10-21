@@ -2,10 +2,85 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hola Mundo - SENA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGME — Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>¡Hola Mundo 2.0!</h1>
-    <h2><p>Bienvenidos a mi primer proyecto SENA.</p></h2>
+
+    <header class="panel-encabezado">
+        <div class="estado-vivo">
+            <span class="punto-vivo"></span>
+            <span>Sistema en línea</span>
+        </div>
+
+        <div class="marca">
+            <h1>SIGME</h1>
+            <p class="subtitulo">Sistema Inteligente de Gestión y Monitoreo Energético</p>
+        </div>
+
+        <div class="medidor" aria-hidden="true">
+            <span class="barra b1"></span>
+            <span class="barra b2"></span>
+            <span class="barra b3"></span>
+            <span class="barra b4"></span>
+            <span class="barra b5"></span>
+        </div>
+    </header>
+
+    <nav class="menu">
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="proyecto.html">El proyecto</a>
+        <a href="tecnico.html">HTML5 &amp; CSS</a>
+        <a href="cierre.html">Cierre</a>
+    </nav>
+
+    <main>
+        <section class="seccion seccion-hero">
+            <span class="etiqueta">Evidencia GA1-220501093-AA1</span>
+            <h2>Una interfaz simple, pensada para un proyecto que sí quiero construir</h2>
+            <p>
+                Este sitio no es un ejercicio cualquiera: es el primer trazo visual
+                de SIGME, el sistema de gestión energética que vengo desarrollando
+                como proyecto formativo. Cada página que ves aquí practica la base
+                de toda interfaz web: estructura con HTML5 y presentación con CSS.
+            </p>
+            <a href="proyecto.html" class="boton">Conocer el proyecto →</a>
+        </section>
+
+        <section class="seccion">
+            <span class="etiqueta">Cómo navegar este sitio</span>
+            <h2>Cuatro páginas, un mismo sistema</h2>
+            <p>
+                A diferencia de una página única con secciones internas, este sitio
+                está organizado en archivos HTML independientes: Inicio, El proyecto,
+                HTML5 &amp; CSS y Cierre. El menú de arriba te lleva de un archivo a
+                otro, igual que navegarías por cualquier sitio web real.
+            </p>
+            <div class="mini-stats">
+                <div class="stat">
+                    <span class="stat-num">4</span>
+                    <span class="stat-label">páginas HTML independientes</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">1</span>
+                    <span class="stat-label">hoja de estilos compartida</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">37</span>
+                    <span class="stat-label">salidas del sistema mapeadas</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Juan Camilo Ramirez Carrasquilla · Ficha 3465955 · ADSO — SENA</p>
+        <p class="pie-secundario">Proyecto formativo: SIGME</p>
+    </footer>
+
+    <script>
+        console.log("SIGME: página de Inicio cargada correctamente.");
+    </script>
 </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGME — HTML5 y CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="panel-encabezado">
+        <div class="estado-vivo">
+            <span class="punto-vivo"></span>
+            <span>Sistema en línea</span>
+        </div>
+
+        <div class="marca">
+            <h1>SIGME</h1>
+            <p class="subtitulo">Sistema Inteligente de Gestión y Monitoreo Energético</p>
+        </div>
+
+        <div class="medidor" aria-hidden="true">
+            <span class="barra b1"></span>
+            <span class="barra b2"></span>
+            <span class="barra b3"></span>
+            <span class="barra b4"></span>
+            <span class="barra b5"></span>
+        </div>
+    </header>
+
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="proyecto.html">El proyecto</a>
+        <a href="tecnico.html" class="activo">HTML5 &amp; CSS</a>
+        <a href="cierre.html">Cierre</a>
+    </nav>
+
+    <main>
+        <section class="seccion contenedor-tarjetas">
+            <span class="etiqueta">Lo que se pone en práctica aquí</span>
+            <h2>HTML5 y CSS en esta evidencia</h2>
+
+            <article class="tarjeta">
+                <span class="tarjeta-icono">&lt;/&gt;</span>
+                <h3>HTML5</h3>
+                <p>
+                    Define la estructura y el significado del contenido con
+                    etiquetas semánticas como header, nav, main, section y footer.
+                    Es el esqueleto sobre el que se apoya todo lo demás.
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="tarjeta-icono">🎨</span>
+                <h3>CSS</h3>
+                <p>
+                    Le da identidad visual a esa estructura: colores, espaciados,
+                    tipografía y una cuadrícula que se adapta a distintas
+                    pantallas mediante una media query.
+                </p>
+            </article>
+
+            <article class="tarjeta">
+                <span class="tarjeta-icono">⚙</span>
+                <h3>Navegación entre páginas</h3>
+                <p>
+                    Cada opción del menú es un enlace &lt;a href="..."&gt; a un
+                    archivo HTML distinto, no un ancla dentro de la misma página.
+                    Así se navega entre páginas reales.
+                </p>
+            </article>
+        </section>
+
+        <section class="seccion">
+            <span class="etiqueta">Etiquetas explicadas</span>
+            <h2>Lo esencial de cada archivo</h2>
+            <p>
+                <strong>DOCTYPE html</strong> indica que el documento usa HTML5.
+                <strong>html</strong> envuelve toda la página y declara el idioma.
+                <strong>head</strong> contiene metadatos y el enlace al CSS.
+                <strong>body</strong> contiene todo lo visible: header, nav, main
+                y footer. Cada página de este sitio repite esta misma estructura,
+                cambiando solo el contenido dentro de main.
+            </p>
+        </section>
+
+        <section class="seccion seccion-cierre">
+            <span class="etiqueta">Próximo paso</span>
+            <h2>Cómo cierra esta evidencia</h2>
+            <a href="cierre.html" class="boton">Ir al cierre →</a>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Juan Camilo Ramirez Carrasquilla · Ficha 3465955 · ADSO — SENA</p>
+        <p class="pie-secundario">Proyecto formativo: SIGME</p>
+    </footer>
+
+    <script>
+        console.log("SIGME: página HTML5 y CSS cargada correctamente.");
+    </script>
+</body>
+</html>

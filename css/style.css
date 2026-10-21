@@ -1,0 +1,315 @@
+/* =========================================================
+   SIGME — Hoja de estilos
+   Identidad visual: panel de monitoreo energético
+   Paleta: carbón verdoso + ámbar de medidor + verde energía
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --carbon: #0d1b1e;
+    --carbon-claro: #15282c;
+    --ambar: #f2a93b;
+    --verde: #3ddc97;
+    --texto: #eaefe9;
+    --texto-tenue: #a9b8b5;
+    --borde: #25393d;
+}
+
+body {
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+    background-color: #f4f6f5;
+    color: #1f2933;
+    line-height: 1.65;
+}
+
+/* ===== Encabezado tipo panel ===== */
+
+.panel-encabezado {
+    background-color: var(--carbon);
+    color: var(--texto);
+    padding: 18px 24px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.estado-vivo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--verde);
+    font-family: "Consolas", "Courier New", monospace;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
+}
+
+.punto-vivo {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--verde);
+    box-shadow: 0 0 8px var(--verde);
+    animation: latido 1.8s ease-in-out infinite;
+}
+
+@keyframes latido {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.marca h1 {
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--ambar);
+}
+
+.subtitulo {
+    color: var(--texto-tenue);
+    font-size: 15px;
+    margin-top: 6px;
+    max-width: 480px;
+}
+
+/* Medidor decorativo: barras tipo ecualizador de consumo */
+.medidor {
+    position: absolute;
+    right: 28px;
+    bottom: 24px;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 36px;
+}
+
+.barra {
+    width: 6px;
+    background-color: var(--verde);
+    border-radius: 2px;
+    opacity: 0.85;
+    animation: pulso 1.4s ease-in-out infinite;
+}
+
+.b1 { height: 14px; animation-delay: 0s; }
+.b2 { height: 26px; animation-delay: 0.15s; }
+.b3 { height: 36px; animation-delay: 0.3s; }
+.b4 { height: 20px; animation-delay: 0.45s; }
+.b5 { height: 30px; animation-delay: 0.6s; }
+
+@keyframes pulso {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.55); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .punto-vivo, .barra {
+        animation: none;
+    }
+}
+
+/* ===== Menú ===== */
+
+.menu {
+    background-color: var(--carbon-claro);
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--borde);
+}
+
+.menu a {
+    color: var(--texto);
+    text-decoration: none;
+    margin: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+    color: var(--ambar);
+}
+
+.menu a.activo {
+    color: var(--ambar);
+    border-bottom: 2px solid var(--ambar);
+    padding-bottom: 4px;
+}
+
+/* ===== Secciones ===== */
+
+.seccion {
+    width: 88%;
+    max-width: 980px;
+    margin: 48px auto;
+    background-color: white;
+    padding: 36px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(13, 27, 30, 0.08);
+}
+
+.etiqueta {
+    display: inline-block;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--carbon);
+    background-color: rgba(61, 220, 151, 0.18);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+}
+
+.seccion h2 {
+    color: var(--carbon);
+    font-size: 26px;
+    margin-bottom: 16px;
+    max-width: 640px;
+}
+
+.seccion p {
+    color: #3a4a4d;
+    max-width: 680px;
+}
+
+.seccion-hero {
+    border-left: 5px solid var(--ambar);
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 13px 22px;
+    background-color: var(--carbon);
+    color: var(--ambar);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+    background-color: var(--carbon-claro);
+    transform: translateY(-2px);
+}
+
+/* ===== Mini estadísticas ===== */
+
+.mini-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--texto-tenue);
+    color: #6b7a78;
+    max-width: 140px;
+}
+
+/* ===== Tarjetas ===== */
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contenedor-tarjetas h2,
+.contenedor-tarjetas .etiqueta {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+.tarjeta {
+    background-color: #f4f6f5;
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid #e1e8e6;
+    border-top: 3px solid var(--verde);
+}
+
+.tarjeta-icono {
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+    color: var(--carbon);
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    color: #4a5a58;
+}
+
+.seccion-cierre {
+    border-left: 5px solid var(--verde);
+}
+
+/* ===== Pie de página ===== */
+
+.pie-pagina {
+    background-color: var(--carbon);
+    color: var(--texto);
+    text-align: center;
+    padding: 26px 20px;
+    font-size: 14px;
+}
+
+.pie-secundario {
+    color: var(--texto-tenue);
+    font-size: 12px;
+    margin-top: 4px;
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .menu a {
+        display: inline-block;
+        margin: 6px 10px;
+    }
+
+    .marca h1 {
+        font-size: 36px;
+    }
+
+    .medidor {
+        display: none;
+    }
+
+    .mini-stats {
+        gap: 22px;
+    }
+}
